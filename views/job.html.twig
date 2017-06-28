@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Jobs</title>
+</head>
+<body>
+    <h1>Where have you worked?</h1>
+    {% if jobs is not empty %}
+    <p>Here are all your shitty jobs:</p>
+    <ul>
+    {% for job in jobs %}
+        <li>{{ job.getJobs }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action='/jobs' method='post'>
+        <label for='title'>Enter a job title you have held:</label>
+        <input id='title' name='title' type='text'><br><br>
+        <label for='time'>How long did you work there?</label>
+        <input id='time' name='time' type='text'><br><br>
+        <label for='location'>Where was the job located?</label>
+        <input id='location' name='location' type='text'><br><br>
+        <label for='description'>Give a brief description of your doodies:</label>
+        <input id='description' name='description' type='text'><br><br>
+
+        <button type='submit'>Add Job</button>
+    </form>
+    <form action='/delete_jobs' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+</body>
+</html>

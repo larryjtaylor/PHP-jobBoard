@@ -4,10 +4,10 @@
 
         private $title;
         private $time;
-        private $location
+        private $location;
         private $description;
 
-        function _constructor($title, $time, $location, $description)
+        function __constructor($new_title, $new_time, $new_location, $new_description)
         {
             $this->title = $new_title;
             $this->time = $new_time;
@@ -15,14 +15,19 @@
             $this->description = $new_description;
         }
 
+        function setTitle($new_title)
+        {
+            $this->title = (string)$new_title;
+        }
+
         function getTitle()
         {
             return $this->title;
         }
 
-        function setTitle()
+        function setTime($new_time)
         {
-            $this->title = (string)$new_title;
+            $this->time = (string)$new_time;
         }
 
         function getTime()
@@ -30,18 +35,19 @@
             return $this->time;
         }
 
-        function setTime()
+        function setLocation($new_location)
         {
-            $this->time = (string)$new_time;
+            $this->location = (string)$new_location;
         }
 
         function getLocation()
         {
             return $this->location;
         }
-        function setLocation()
+
+        function setDescription($new_description)
         {
-            $this->location = (string)$new_location;
+            $this->description = (string)$new_description;
         }
 
         function getDescription()
@@ -49,24 +55,17 @@
             return $this->description;
         }
 
-        function setDescription()
+        function save()
         {
-            $this->description = (string)$new_description;
+            array_push($_SESSION['list_of_jobs'], $this);
         }
-
-
-                function save()
-                {
-                    array_push($_SESSION['list_of_jobs'], $this);
-                }
-                static function getAll()
-                {
-                    return $_SESSION['list_of_jobs'];
-                }
-                static function deleteAll()
-                {
-                    $_SESSION['list_of_jobs'] = array();
-                }
-
+        static function getAll()
+        {
+            return $_SESSION['list_of_jobs'];
+        }
+        static function deleteAll()
+        {
+            $_SESSION['list_of_jobs'] = array();
+        }
     }
 ?>
