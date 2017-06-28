@@ -20,7 +20,7 @@
     });
 
     $app->post("/jobs", function() use ($app) {
-        $jobs = new Jobs($_POST['jobs'], $_POST['time'], $_POST['location'], $_POST['description']);
+        $jobs = new Jobs($_POST['title'], $_POST['time'], $_POST['location'], $_POST['description']);
         $jobs->save();
         return $app['twig']->render('create_jobs.html.twig', array('new_jobs' => $jobs));
     });
@@ -29,6 +29,6 @@
         Jobs::deleteAll();
         return $app['twig']->render('delete_jobs.html.twig');
     });
-    
+
     return $app;
 ?>

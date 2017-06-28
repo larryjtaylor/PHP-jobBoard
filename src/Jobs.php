@@ -7,17 +7,17 @@
         private $location;
         private $description;
 
-        function __constructor($new_title, $new_time, $new_location, $new_description)
+        function __construct($title, $time, $location, $description)
         {
-            $this->title = $new_title;
-            $this->time = $new_time;
-            $this->location = $new_location;
-            $this->description = $new_description;
+            $this->title = $title;
+            $this->time = $time;
+            $this->location = $location;
+            $this->description = $description;
         }
 
-        function setTitle($new_title)
+        function setTitle($title)
         {
-            $this->title = (string)$new_title;
+            $this->title = (string)$title;
         }
 
         function getTitle()
@@ -25,9 +25,9 @@
             return $this->title;
         }
 
-        function setTime($new_time)
+        function setTime($time)
         {
-            $this->time = (string)$new_time;
+            $this->time = (string)$time;
         }
 
         function getTime()
@@ -35,9 +35,9 @@
             return $this->time;
         }
 
-        function setLocation($new_location)
+        function setLocation($location)
         {
-            $this->location = (string)$new_location;
+            $this->location = (string)$location;
         }
 
         function getLocation()
@@ -45,9 +45,9 @@
             return $this->location;
         }
 
-        function setDescription($new_description)
+        function setDescription($description)
         {
-            $this->description = (string)$new_description;
+            $this->description = (string)$description;
         }
 
         function getDescription()
