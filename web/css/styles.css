@@ -1,0 +1,31 @@
+#header {
+    color: blue;
+    font-family: 'Cinzel', serif;
+    text-align: right;
+}
+
+#circle {
+    height: 200px;
+    width: 300px;
+    vertical-align: top;
+}
+
+#jobListOne {
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+body {
+    background-image: url("/../img/ad.jpg");
+}
+
+.well {
+    width: 40%;
+    display: block;
+    margin: auto;
+    border: solid 1px;
+}
+
+#circleCol {
+    height: 100px;
+}

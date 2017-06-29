@@ -1,37 +1,55 @@
 <html>
 <head>
+    <link rel="stylesheet" href="/../css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/../css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <title>Jobs</title>
 </head>
 <body>
-    <h1>Where have you worked?</h1>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 id='header'>Where have you</h1>
+            </div>
+            <div class="col-md-2" id="circleCol">
+                <img id="circle" src="/../img/circle.png" alt="">
+            </div>
+        </div>
+    </div>
 
-    <form action='/jobs' method='post'>
-        <label for='title'>Enter a job title you have held:</label>
-        <input id='title' name='title' type='text'><br><br>
-        <label for='time'>How long did you work there?</label>
-        <input id='time' name='time' type='text'><br><br>
-        <label for='location'>Where was the job located?</label>
-        <input id='location' name='location' type='text'><br><br>
-        <label for='description'>Give a brief description of your duties:</label>
-        <input id='description' name='description' type='text'><br><br>
+    <div class="container">
+        <div class="well">
+            <form action='/jobs' method='post'>
+                <label for='title'>Enter a job title you have held:</label>
+                <input id='title' name='title' type='text'><br><br>
+                <label for='time'>How long did you work there?</label>
+                <input id='time' name='time' type='text'><br><br>
+                <label for='location'>Where was the job located?</label>
+                <input id='location' name='location' type='text'><br><br>
+                <label for='description'>Give a brief description of your duties:</label>
+                <input id='description' name='description' type='text'><br><br>
 
-        <button type='submit'>Add Job</button>
-    </form>
+                <button type='submit'>Add Job</button>
+            </form>
+        </div>
+        <div class="well">
 
-        {% if jobs is not empty %}
-        <p>Here are all your jobs:</p>
-        <ul>
-            {% for job in jobs %}
-            <p>{{ job.getTitle }}</p>
-            <li>{{ job.getTime }}</li>
-            <li>{{ job.getLocation }}</li>
-            <li>{{ job.getDescription }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+            {% if jobs is not empty %}
+            <p>Here are all your jobs:</p>
+            <ul>
+                {% for job in jobs %}
+                <p id='jobListOne'>{{ job.getTitle }}</p>
+                <li>{{ job.getTime }}</li>
+                <li>{{ job.getLocation }}</li>
+                <li>{{ job.getDescription }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
 
-    <form action='/delete_jobs' method='post'>
-        <button type='submit'>Clear</button>
-    </form>
+        <form action='/delete_jobs' method='post'>
+            <button type='submit'>Clear</button>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
